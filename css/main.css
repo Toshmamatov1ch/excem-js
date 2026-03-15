@@ -1,0 +1,300 @@
+/* josefin-sans-300 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Josefin Sans";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/josefin-sans-v34-latin-300.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* josefin-sans-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Josefin Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/josefin-sans-v34-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* josefin-sans-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Josefin Sans";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/josefin-sans-v34-latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* josefin-sans-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Josefin Sans";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/josefin-sans-v34-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+:root {
+  --primary-text-button-color: rgba(206, 152, 152, 1);
+  --text-title-color: rgba(66, 58, 58, 1);
+  --font-family: "Josefin Sans";
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input,
+button {
+  border: none;
+}
+
+body {
+  font-family: var(--font-family);
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.content-side {
+  flex: 0 0 60%;
+  background: url("../img/bg.png") no-repeat center center/cover;
+  padding: 50px 10% 50px 12%;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  width: 158px;
+  margin-bottom: 136px;
+}
+
+.main-text {
+  width: 445px;
+}
+
+h1 {
+  font-size: 4.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  line-height: 1.1;
+  color: var(--text-title-color);
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+h1 span {
+  color: var(--primary-text-button-color);
+  font-weight: 300;
+}
+
+p {
+  color: var(--primary-text-button-color);
+  line-height: 1.6;
+  margin-bottom: 40px;
+  line-height: 28px;
+}
+
+/* Input va Button guruhi */
+.input-group {
+  display: flex;
+  border: 1px solid #f2cfcf;
+  border-radius: 50px;
+  height: 55px;
+  max-width: 450px;
+  overflow: hidden;
+}
+
+.input-group input {
+  flex: 1;
+  border: none;
+  padding-left: 30px;
+  outline: none;
+  background: transparent;
+  color: #ee8c8c;
+}
+
+.input-group button {
+  width: 100px;
+  background: linear-gradient(135deg, #f8bfbf, #ee8c8c);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(238, 140, 140, 0.3);
+  transition: 0.3s;
+}
+
+.input-group button:hover {
+  opacity: 0.5;
+}
+
+input::placeholder {
+  color: var(--primary-text-button-color);
+}
+
+.image-side {
+  flex: 0 0 40%;
+}
+
+.image-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mobileimg {
+  display: none;
+}
+
+/* 1024px va undan kichik ekranlar uchun */
+@media (max-width: 1024px) {
+  .container {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .content-side {
+    flex: 0 0 60%;
+    padding: 60px 50px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+  }
+
+  .logo {
+    margin-bottom: 80px;
+  }
+
+  .image-side {
+    flex: 0 0 40%;
+  }
+}
+
+@media (max-width: 853px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+    overflow: visible;
+  }
+  body {
+    overflow: visible;
+    height: auto;
+  }
+  .content-side {
+    order: 2;
+    flex: 1 0 auto;
+    width: 100%;
+    padding: 60px 40px;
+    text-align: center;
+  }
+  .image-side {
+    order: 1;
+    flex: 0 0 400px;
+    width: 100%;
+  }
+  .logo {
+    margin-right: auto;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+  .input-group {
+    margin: 0 auto;
+  }
+}
+
+/* 768px (Planshetlar) uchun */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+    overflow: visible;
+  }
+  body {
+    overflow: visible;
+    height: auto;
+  }
+  .content-side {
+    order: 2;
+    flex: 1 0 auto;
+    width: 100%;
+    padding: 60px 40px;
+    text-align: center;
+  }
+  .image-side {
+    order: 1;
+    flex: 0 0 400px;
+    width: 100%;
+  }
+  .logo {
+    margin-right: auto;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+  .input-group {
+    margin: 0 auto;
+  }
+}
+
+/* 500px (Mobil qurilmalar) uchun */
+@media (max-width: 500px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .content-side {
+    padding: 92px 32px 64px 32px;
+    background: none;
+  }
+
+  .logo {
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    margin-bottom: 0;
+    width: 120px;
+    z-index: 10;
+  }
+
+  .image-side {
+    margin-top: 100px;
+    flex: 0 0 300px;
+  }
+
+  .hero-img {
+    display: none;
+  }
+
+  .mobileimg {
+    display: block;
+  }
+
+  .main-text {
+    width: 311px;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+    letter-spacing: 0.2em;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  .input-group {
+    height: 50px;
+  }
+}
